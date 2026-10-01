@@ -1,0 +1,11 @@
+{
+  "name": "how-to-live-worse",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "低性价比人生指南：一本不建议照做的生活反面教材",
+  "scripts": {
+    "test": "node scripts/validate.mjs"
+  },
+  "license": "MIT"
+}

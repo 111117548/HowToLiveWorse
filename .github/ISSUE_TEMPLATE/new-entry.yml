@@ -1,0 +1,55 @@
+name: 新条目
+description: 提议一个新的低性价比反模式
+title: "[条目] "
+labels: ["new-entry"]
+body:
+  - type: markdown
+    attributes:
+      value: 请勿提交任何可执行的自残、伤人、违法或危险操作细节。
+  - type: input
+    id: title
+    attributes:
+      label: 反模式标题
+      placeholder: 一句话描述这个坏决策
+    validations:
+      required: true
+  - type: dropdown
+    id: category
+    attributes:
+      label: 分类
+      options:
+        - 身体透支
+        - 金钱蒸发
+        - 注意力粉碎
+        - 数字裸奔
+        - 工作与法律
+        - 关系内耗
+        - 学习绕路
+        - 应急失灵
+    validations:
+      required: true
+  - type: textarea
+    id: temptation
+    attributes:
+      label: 它为什么诱人？
+    validations:
+      required: true
+  - type: textarea
+    id: loss
+    attributes:
+      label: 真实账单
+    validations:
+      required: true
+  - type: textarea
+    id: stop
+    attributes:
+      label: 最小止损动作
+    validations:
+      required: true
+  - type: textarea
+    id: sources
+    attributes:
+      label: 来源与适用范围
+      placeholder: 每行一个链接，并说明它支持哪句话、适用于哪里
+    validations:
+      required: true

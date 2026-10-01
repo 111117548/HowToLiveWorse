@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://111117548.github.io/HowToLiveWorse/sitemap.xml

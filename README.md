@@ -69,4 +69,3 @@ npm test
 - 文字内容与条目数据： [CC BY-SA 4.0](LICENSE-CONTENT.md)
 
 引用或改编时，请注明“低性价比人生指南 / HowToLiveWorse”并链接回本仓库。原始来源仍受各自许可与条款约束。
-

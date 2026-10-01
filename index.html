@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#f04b32">
+  <meta name="description" content="低性价比人生指南：用黑色幽默拆解那些高成本、低回报、容易把生活搞砸的坏决策，并给出最小止损动作。">
+  <meta name="keywords" content="低性价比人生,反面教材,决策,健康,理财,信息安全,止损">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="低性价比人生指南">
+  <meta property="og:description" content="一本不建议照做的生活指南。40 个坏决策，40 个最小止损动作。">
+  <meta property="og:url" content="https://111117548.github.io/HowToLiveWorse/">
+  <link rel="canonical" href="https://111117548.github.io/HowToLiveWorse/">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+  <title>低性价比人生指南｜一本不建议照做的生活指南</title>
+</head>
+<body>
+  <a class="skip-link" href="#entries">跳到指南</a>
+
+  <header class="topbar">
+    <a class="brand" href="#top" aria-label="返回首页">
+      <span class="brand-mark" aria-hidden="true">↘</span>
+      <span>低性价比人生</span>
+    </a>
+    <nav class="top-actions" aria-label="主要导航">
+      <a href="#about">这是什么</a>
+      <a href="https://github.com/111117548/HowToLiveWorse" target="_blank" rel="noreferrer">GitHub</a>
+      <button class="icon-button" id="theme-toggle" type="button" aria-label="切换明暗主题" title="切换明暗主题">◐</button>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="eyebrow">HOW TO LIVE WORSE · 反面教材</p>
+        <h1 id="hero-title">把人生搞砸，<br><em>并不划算。</em></h1>
+        <p class="hero-lede">我们把常见的坏决策写到足够荒谬，再认真算一遍它会吃掉多少健康、金钱、时间、关系和自由。</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#entries">看看怎么亏</a>
+          <button class="button button-secondary" id="random-entry" type="button">随机抽一条</button>
+        </div>
+      </div>
+
+      <div class="loss-receipt" aria-label="低性价比小票">
+        <div class="receipt-head">
+          <span>LOSS RECEIPT</span>
+          <span>#00040</span>
+        </div>
+        <div class="receipt-row"><span>坏决策</span><strong id="stat-total">40 条</strong></div>
+        <div class="receipt-row"><span>主题</span><strong id="stat-categories">8 类</strong></div>
+        <div class="receipt-row"><span>照做收益</span><strong>≈ 0</strong></div>
+        <div class="receipt-row"><span>潜在损失</span><strong class="danger">不可估量</strong></div>
+        <div class="receipt-total"><span>建议</span><strong>反着做</strong></div>
+        <p>本小票不支持报销，支持止损。</p>
+      </div>
+    </section>
+
+    <section class="safety-note" aria-labelledby="safety-title">
+      <span class="safety-icon" aria-hidden="true">!</span>
+      <div>
+        <h2 id="safety-title">先说清楚：这不是伤害指南</h2>
+        <p>“作死”在这里只是黑色幽默，指那些长期消耗自己的坏习惯和坏决策。本站不提供自残、自杀、伤害他人或违法行为的方法。如果你正处在现实危险中，请立即联系当地急救服务、可信任的人或就近的医疗机构。</p>
+      </div>
+    </section>
+
+    <section class="guide" id="entries" aria-labelledby="guide-title">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">ANTI-PATTERN LIBRARY</p>
+          <h2 id="guide-title">人生亏损图鉴</h2>
+        </div>
+        <p>每条都按“诱惑 → 代价 → 最小止损”展开。默认把损失最重的放在前面。</p>
+      </div>
+
+      <div class="controls" aria-label="筛选指南">
+        <label class="search-box">
+          <span aria-hidden="true">⌕</span>
+          <span class="sr-only">搜索</span>
+          <input id="search" type="search" placeholder="搜索熬夜、担保、密码……" autocomplete="off">
+          <kbd>/</kbd>
+        </label>
+        <div class="select-row">
+          <label>
+            <span>损失等级</span>
+            <select id="risk-filter">
+              <option value="all">全部</option>
+              <option value="5">灾难级</option>
+              <option value="4">很昂贵</option>
+              <option value="3">慢性亏损</option>
+            </select>
+          </label>
+          <label>
+            <span>排列</span>
+            <select id="sort-order">
+              <option value="risk">损失从高到低</option>
+              <option value="effort">止损从快到慢</option>
+              <option value="category">按主题</option>
+            </select>
+          </label>
+        </div>
+      </div>
+
+      <div class="category-filters" id="category-filters" role="group" aria-label="按主题筛选"></div>
+
+      <div class="results-bar" aria-live="polite">
+        <span id="result-count">正在载入……</span>
+        <button class="text-button" id="reset-filters" type="button">清空筛选</button>
+      </div>
+
+      <div class="entry-grid" id="entry-grid"></div>
+      <div class="empty-state" id="empty-state" hidden>
+        <span>∅</span>
+        <h3>没找到这种亏法</h3>
+        <p>换个关键词，或者清空筛选。也许这反而是件好事。</p>
+      </div>
+    </section>
+
+    <section class="manifesto" id="about" aria-labelledby="about-title">
+      <div>
+        <p class="eyebrow">WHY THIS EXISTS</p>
+        <h2 id="about-title">笑话负责让你停下，证据负责让你转身。</h2>
+      </div>
+      <div class="manifesto-copy">
+        <p>很多建议听起来都对，却很难在需要时想起来。反面清单换了一个角度：先把坏选择的诱惑说透，再把账单摆在桌上。</p>
+        <p>项目受 <a href="https://github.com/eternity4719/HowToLiveBetter" target="_blank" rel="noreferrer">《高性价比人生指南》</a>启发，但内容独立创作、方向相反：它寻找值得做的事，我们识别不值得付的代价。</p>
+        <div class="evidence-legend" aria-label="证据等级说明">
+          <span><b>A</b> 权威指南、法规或综合证据</span>
+          <span><b>B</b> 研究与机构建议较一致</span>
+          <span><b>C</b> 经验性原则，依情境判断</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="contribute" aria-labelledby="contribute-title">
+      <p class="eyebrow">OPEN SOURCE</p>
+      <h2 id="contribute-title">发现一种更亏的活法？</h2>
+      <p>欢迎提交条目、补来源、纠错或改文案。唯一的硬规则：不能把讽刺写成可执行的伤害教程，每条必须给出安全、现实的止损动作。</p>
+      <a class="button button-primary" href="https://github.com/111117548/HowToLiveWorse/issues/new/choose" target="_blank" rel="noreferrer">提交建议</a>
+    </section>
+  </main>
+
+  <footer>
+    <p><strong>低性价比人生指南</strong> · 内容 CC BY-SA 4.0 · 代码 MIT</p>
+    <p>不是医疗、法律或财务意见。遇到高风险问题，请找有资质的专业人士。</p>
+  </footer>
+
+  <template id="entry-template">
+    <article class="entry-card">
+      <div class="card-topline">
+        <span class="category-badge"></span>
+        <span class="risk-badge"></span>
+      </div>
+      <h3></h3>
+      <p class="temptation"></p>
+      <div class="loss-block">
+        <span class="block-label">真实账单</span>
+        <p class="loss"></p>
+      </div>
+      <div class="stop-block">
+        <span class="block-label">最小止损</span>
+        <p class="stop"></p>
+      </div>
+      <div class="card-meta">
+        <span class="evidence"></span>
+        <span class="effort"></span>
+        <a class="source" target="_blank" rel="noreferrer">来源 ↗</a>
+      </div>
+      <button class="share-button" type="button" title="复制此条链接">#</button>
+    </article>
+  </template>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>
